@@ -1,0 +1,2 @@
+module MockDraftHelper
+end
