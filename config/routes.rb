@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   
-  get 'mockdrafts/index'
+  get 'mockdraft/index'
   
   resources :teams
   resources :mockdrafts
