@@ -1,0 +1,2 @@
+class Mockdraft < ApplicationRecord
+end
