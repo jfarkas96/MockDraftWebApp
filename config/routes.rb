@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'team/index'
+  get 'teams/index'
 
   get 'welcome/index'
   
-  get 'mockdraft/index'
+  get 'mockdrafts/index'
   
   resources :teams
   resources :mockdrafts
