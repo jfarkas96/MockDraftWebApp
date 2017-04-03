@@ -12,6 +12,10 @@ class PlayersController < ApplicationController
         @player.save
         redirect_to @player
     end
+    
+    def index
+        @players = Player.all
+    end
 end
 
 private
