@@ -2,11 +2,15 @@ class PlayersController < ApplicationController
     def new
     end
     
+    def show
+        @player = Player.find(params[:id])
+    end
+    
     def create
         @player = Player.new(player_params)
         
         @player.save
-        redirect_to @article
+        redirect_to @player
     end
 end
 
