@@ -4,7 +4,6 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :college
       t.string :grade
-      t.string :college
       t.string :height
       t.string :weight
       t.string :picture_link
