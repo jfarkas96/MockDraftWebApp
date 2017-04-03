@@ -1,8 +1,12 @@
-<h1>Team Name</h1>
-<h2>Controls Picks: </h2>
-<p>
-    1
-    33
-    60
-    80
-</p>
+<h1>Teams</h1>
+<table>
+    <% @teams.each do |team| %>
+        <tr>
+            <td><img
+                    src=<%= team.picture_link %>
+                >
+            </td>
+            <td><%= link_to team.name, team_path(team) %></td>
+        </tr>
+    <% end %>
+</table>
