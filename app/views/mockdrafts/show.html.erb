@@ -1,20 +1,4 @@
-<div class="container">
-    
-<body>
-    <div class="nav">
-    <h2>Links: </h2>
-    <ul>
-        <li><%= link_to 'Home', controller: 'welcome' %></li>
-        <li><%= link_to 'Teams', controller: 'teams' %></li>
-        <li><%= link_to 'Players', controller: 'players' %></li>
-        <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
-        <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
-    </ul>
-    </div>
-    <div class ="main">
-    <head>
-        <h1>Orion's Mock Draft</h1>
-    </head>
+<h1><%= @mockdraft.creator %>'s Mock Draft</h1>
 <table>
     <tr>
         <th>Pick Number</th>
@@ -211,11 +195,7 @@
         <td><%= link_to @players.find(@mockdraft.pick32).name, player_path(@mockdraft.pick32) %></td>
     </tr>
 </table>
-<h2>Comments: </h2>
-<h2>Add Comment: </h2>
-</div>
-</body>
 
-
-
-</div>
+<h3>
+    <%= link_to "Back to User Mock Drafts", controller: 'mockdrafts' %>
+</h3>
