@@ -1,0 +1,62 @@
+<h1>Editing Team</h1>
+
+<%= form_for :team, url: mockdraft_path(@team), method: :patch do |f| %>
+
+    <% if @team.errors.any? %>
+    <div id="error_explanation">
+        <h2>
+            <%= pluralize(@team.errors.count, "error") %> prohibited
+            this team from being saved:
+        </h2>
+        <ul>
+            <%= @team.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
+    
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :needs %><br>
+        <%= f.text_field :needs %>
+    </p>
+    <p>
+        <%= f.label :round1 %><br>
+        <%= f.text_field :round1 %>
+    </p>
+    <p>
+        <%= f.label :round2 %><br>
+        <%= f.text_field :round2 %>
+    </p>
+    <p>
+        <%= f.label :round3 %><br>
+        <%= f.text_field :round3 %>
+    </p>
+    <p>
+        <%= f.label :round4 %><br>
+        <%= f.text_field :round4 %>
+    </p>
+    <p>
+        <%= f.label :round5 %><br>
+        <%= f.text_field :round5 %>
+    </p>
+    <p>
+        <%= f.label :round6 %><br>
+        <%= f.text_field :round6 %>
+    </p>
+    <p>
+        <%= f.label :round7 %><br>
+        <%= f.text_field :round7 %>
+    </p>
+    <p>
+        <%= f.label :picture_link %><br>
+        <%= f.text_field :picture_link %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

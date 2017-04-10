@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403210045) do
+ActiveRecord::Schema.define(version: 20170410151426) do
 
   create_table "mockdrafts", force: :cascade do |t|
     t.string   "creator"
@@ -58,8 +58,9 @@ ActiveRecord::Schema.define(version: 20170403210045) do
     t.string   "height"
     t.string   "weight"
     t.string   "picture_link"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "highlights_link"
   end
 
   create_table "teams", force: :cascade do |t|

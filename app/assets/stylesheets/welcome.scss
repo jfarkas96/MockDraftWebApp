@@ -14,8 +14,14 @@ html {
     background-attachment: fixed;
 }
 
-h1,h2,table,th,td {
+h1,h2 {
    background-color: white;
+   display: inline;
+}
+
+table,th,td {
+  background-color: white;
+  
 }
 .nav {
   max-width: 25%;

@@ -19,6 +19,28 @@ class MockdraftsController < ApplicationController
         @teams = Team.all
         @players = Player.all
     end
+    
+    def edit
+        @players = Player.all
+        @mockdraft = Mockdraft.find(params[:id])
+    end
+    
+    def update
+        @mockdraft = Mockdraft.find(params[:id])
+        
+        if @mockdraft.update(mockdraft_params)
+            redirect_to @mockdraft
+        else
+            render 'edit'
+        end
+    end
+    
+    def destroy
+        @mockdraft = Mockdraft.find(params[:id])
+        @mockdraft.destroy
+        
+        redirect_to mockdrafts_path
+    end
 end
 
 private

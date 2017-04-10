@@ -17,13 +17,20 @@
 <table>
     <tr>
         <th>Creator</th>
-        <th>Mock Draft</th>
+        <th>View Mock Draft</th>
+        <th>Edit Mock Draft</th>
+        <th>Delete Mock Draft</th>
     </tr>
     
     <% @mockdrafts.each do |mockdraft| %>
         <tr>
             <td><%= mockdraft.creator %></td>
-            <td><%= link_to "View", mockdraft_path(mockdraft) %></td>
+            <td><%= link_to 'View', mockdraft_path(mockdraft) %></td>
+            <td><%= link_to 'Edit', edit_mockdraft_path(mockdraft) %></td>
+            <td><%= link_to 'Delete', 
+                                    mockdraft_path(mockdraft),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
 </table>

@@ -7,7 +7,7 @@
         <li><%= link_to 'Home', controller: 'welcome' %></li>
         <li><%= link_to 'Teams', controller: 'teams' %></li>
         <li><%= link_to 'Players', controller: 'players' %></li>
-        <li>Create a Mock Draft</li>
+        <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
         <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
     </ul>
     </div>
@@ -20,6 +20,8 @@
         <th>Name</th>
         <th>Position</th>
         <th>Grade</th>
+        <th>Edit Player</th>
+        <th>Delete Player</th>
     </tr>
     
     <% @players.each do |player| %>
@@ -27,6 +29,11 @@
             <td><%= link_to player.name, player_path(player) %></td>
             <td><%= player.position %></td>
             <td><%= player.grade %></td>
+            <td><%= link_to 'Edit', edit_player_path(player) %></td>
+            <td><%= link_to 'Delete', 
+                                    player_path(player),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
 </table>
