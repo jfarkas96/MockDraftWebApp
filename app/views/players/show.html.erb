@@ -1,6 +1,6 @@
 <h1>
     <%= @player.name %>
-</h1>
+</h1><br>
 
 <img 
     src=<%= @player.picture_link %>
@@ -32,7 +32,11 @@
 </h3>
 
 <h3>Highlights:</h3>
-<iframe width="560" height="315" src=<%= @player.highlights_link %> frameborder="0" allowfullscreen></iframe>
+
+    <iframe width="560" height="315"
+    src=<%= @player.highlights_link %> frameborder="0" allowfullscreen>
+    </iframe>
+
 
 <h3>
     <%= link_to "Back to Players", controller: 'players' %>
