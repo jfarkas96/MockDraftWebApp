@@ -5,6 +5,7 @@
 table, th, td {
     border: 2px solid black;
     border-collapse: collapse;
+    min-width: 55px;
 }
 
 html {
@@ -15,14 +16,16 @@ html {
 }
 
 h1,h2 {
-   background-color: white;
+   //background-color: white;
    display: inline;
+   background: rgba(255,255,255,0)
 }
 
 table,th,td {
-  background-color: white;
-  
+  //background-color: white;
+  background: rgba(255,255,255,0.2)
 }
+
 .nav {
   max-width: 25%;
   min-width: 140px;
@@ -40,6 +43,28 @@ table,th,td {
   padding-left: 30px;
   min-width: 75%;
 }
+
+.columns {
+    -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
+    vertical-align: middle;
+    column-gap: 20px;
+    display: inline-block;
+    
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+  page-break-inside: avoid;
+}
+
+tr {
+  vertical-align: middle;
+}
+
+
 //body {
 //    background-color: white;
 //}

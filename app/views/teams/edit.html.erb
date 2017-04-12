@@ -1,6 +1,6 @@
 <h1>Editing Team</h1>
 
-<%= form_for :team, url: mockdraft_path(@team), method: :patch do |f| %>
+<%= form_for :team, url: team_path(@team), method: :patch do |f| %>
 
     <% if @team.errors.any? %>
     <div id="error_explanation">
