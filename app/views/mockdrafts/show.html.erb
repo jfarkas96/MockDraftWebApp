@@ -197,7 +197,7 @@
 </table><br>
 
 <% if @mockdraft.mock_draft_comments.exists? %>
-    <h2>Comments</h2>
+    <h2>Comments</h2><br>>
     <% @mockdraft.mock_draft_comments.each do |comment| %>
         <p>
             <strong>Commenter:</strong>
@@ -207,8 +207,8 @@
         <p>
             <strong>Comment:</strong>
             <%= comment.body %>
-        </p>
-    <% end %><br>
+        </p><br>
+    <% end %>
 <% end %>
 
 <h2>Add a comment:</h2>

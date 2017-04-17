@@ -39,9 +39,11 @@
     src=<%= @player.highlights_link %> frameborder="0" allowfullscreen>
     </iframe><br><br>
     
+<div class="comments">
 <% if @player.player_comments.exists? %>    
-    <h2 style="color:white">Comments</h2>
+    <h2>Comments</h2>
     <% @player.player_comments.each do |comment| %>
+        <div class="individual_comment">
         <p>
             <strong>Commenter:</strong>
             <%= comment.commenter %>
@@ -51,9 +53,11 @@
             <strong>Comment:</strong>
             <%= comment.body %>
         </p>
-    <% end %><br>
+        </div>
+    <% end %>
 <% end %>
-<div>
+</div>
+
 <h2>Add a comment:</h2>
 <%= form_for([@player, @player.player_comments.build]) do |f| %>
     <p>
@@ -67,8 +71,8 @@
     <p>
         <%= f.submit "Submit" %>
     </p>
+
 <% end %>
-</div>
 <h3>
     <%= link_to "Back to Players", controller: 'players' %>
 </h3>
