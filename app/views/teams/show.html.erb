@@ -46,6 +46,36 @@
     <%= @team.round7 %>
 </h3>
 
+<% if @team.team_comments.exists? %>
+    <h2>Comments</h2>
+    <% @team.team_comments.each do |comment| %>
+        <p>
+            <strong>Commenter:</strong>
+            <%= comment.commenter %>
+        </p>
+    
+        <p>
+            <strong>Comment:</strong>
+            <%= comment.body %>
+        </p>
+    <% end %><br>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@team, @team.team_comments.build]) do |f| %>
+    <p>
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter %>
+    </p>
+    <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+    </p>
+    <p>
+        <%= f.submit "Submit" %>
+    </p>
+<% end %>
+
 <h3>
     <%= link_to "Back to Teams", controller: 'teams' %>
 </h3>

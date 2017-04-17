@@ -37,9 +37,38 @@
     <iframe width="560" height="315"
     style="border: 3px solid #FF0000;"
     src=<%= @player.highlights_link %> frameborder="0" allowfullscreen>
-    </iframe>
-
-
+    </iframe><br><br>
+    
+<% if @player.player_comments.exists? %>    
+    <h2 style="color:white">Comments</h2>
+    <% @player.player_comments.each do |comment| %>
+        <p>
+            <strong>Commenter:</strong>
+            <%= comment.commenter %>
+        </p>
+    
+        <p>
+            <strong>Comment:</strong>
+            <%= comment.body %>
+        </p>
+    <% end %><br>
+<% end %>
+<div>
+<h2>Add a comment:</h2>
+<%= form_for([@player, @player.player_comments.build]) do |f| %>
+    <p>
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter %>
+    </p>
+    <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+    </p>
+    <p>
+        <%= f.submit "Submit" %>
+    </p>
+<% end %>
+</div>
 <h3>
     <%= link_to "Back to Players", controller: 'players' %>
 </h3>

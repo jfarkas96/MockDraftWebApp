@@ -194,7 +194,37 @@
         <td><%= link_to @NO.name, team_path(@NO.id) %></td>
         <td><%= link_to @players.find(@mockdraft.pick32).name, player_path(@mockdraft.pick32) %></td>
     </tr>
-</table>
+</table><br>
+
+<% if @mockdraft.mock_draft_comments.exists? %>
+    <h2>Comments</h2>
+    <% @mockdraft.mock_draft_comments.each do |comment| %>
+        <p>
+            <strong>Commenter:</strong>
+            <%= comment.commenter %>
+        </p>
+    
+        <p>
+            <strong>Comment:</strong>
+            <%= comment.body %>
+        </p>
+    <% end %><br>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@mockdraft, @mockdraft.mock_draft_comments.build]) do |f| %>
+    <p>
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter %>
+    </p>
+    <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+    </p>
+    <p>
+        <%= f.submit "Submit" %>
+    </p>
+<% end %>
 
 <h3>
     <%= link_to "Back to User Mock Drafts", controller: 'mockdrafts' %>
