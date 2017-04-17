@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170412155249) do
 
-  create_table "mock_draft_comments", force: :cascade do |t|
-    t.string   "commenter"
-    t.text     "body"
-    t.integer  "mockdraft_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["mockdraft_id"], name: "index_mock_draft_comments_on_mockdraft_id"
-  end
-
   create_table "mockdrafts", force: :cascade do |t|
     t.string   "creator"
     t.string   "pick1"
