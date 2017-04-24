@@ -1,168 +1,309 @@
+<style>
+    h1{
+        color: white
+    }
+    p{
+        color: white
+    }
+</style>
 <h1>New Mock Draft</h1>
     <%= form_for :mockdraft, url: mockdrafts_path do |f| %>
+
     <p>
         <strong>Creator's Name:</strong>
         <%= f.text_field :creator %>
     </p>
-        <strong>Pick 1 (Cleveland Browns): </strong>
-        <%= f.collection_select(:pick1, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 2 (San Francisco 49ers): </strong>
-       <%= f.collection_select(:pick2, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 3 (Chicago Bears): </strong>
-        <%= f.collection_select(:pick3, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 4 (Jacksonville Jaguars): </strong>
-        <%= f.collection_select(:pick4, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 5 (Tennessee Titans): </strong>
-        <%= f.collection_select(:pick5, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 6 (New York Jets): </strong>
-        <%= f.collection_select(:pick6, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 7 (Los Angeles Chargers): </strong>
-        <%= f.collection_select(:pick7, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 8 (Carolina Panthers): </strong>
-        <%= f.collection_select(:pick8, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 9 (Cincinnati Bengals): </strong>
-        <%= f.collection_select(:pick9, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 10 (Buffalo Bills): </strong>
-        <%= f.collection_select(:pick10, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 11 (New Orleans Saints): </strong>
-        <%= f.collection_select(:pick11, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 12 (Cleveland Browns): </strong>
-        <%= f.collection_select(:pick12, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 13 (Arizona Cardinals): </strong>
-        <%= f.collection_select(:pick13, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 14 (Philadelphia Eagles): </strong>
-        <%= f.collection_select(:pick14, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 15 (Indianapolis Colts): </strong>
-        <%= f.collection_select(:pick15, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 16 (Baltimore Ravens): </strong>
-        <%= f.collection_select(:pick16, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 17 (Washington Redskins): </strong>
-        <%= f.collection_select(:pick17, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 18 (Tennessee Titans): </strong>
-        <%= f.collection_select(:pick18, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 19 (Tampa Bay Buccaneers): </strong>
-        <%= f.collection_select(:pick19, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 20 (Denver Broncos): </strong>
-        <%= f.collection_select(:pick20, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 21 (Detroit Lions): </strong>
-        <%= f.collection_select(:pick21, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
-    </p>
-        <strong>Pick 22 (Miami Dolphins): </strong>
-        <%= f.collection_select(:pick22, @players, :id, :name, :include_blank => true) %>
-    <p>
     
-    </p>
+<table>   
+    <tr>
+        <td>
+        <strong>Pick 1 (Cleveland Browns): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick1, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <strong>Pick 2 (San Francisco 49ers): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick2, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 3 (Chicago Bears): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick3, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+   <tr>
+        <td>
+        <strong>Pick 4 (Jacksonville Jaguars): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick4, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 5 (Tennesee Titans): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick5, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 6 (New York Jets): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick6, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 7 (Los Angeles Chargers): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick7, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 8 (Carolina Panthers): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick8, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 9 (Cincinnati Bengals): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick9, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 10 (Buffalo Bills): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick10, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 11 (New Orleans Saints): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick11, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 12 (Cleveland Browns): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick12, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 13 (Arizona Cardinals): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick13, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 14 (Philadelphia Eagles): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick14, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 15 (Indianapolis Colts): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick15, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 16 (Baltimore Ravens): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick16, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 17 (Washington Redskins): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick17, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 18 (Tennesee Titans): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick18, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 19 (Tampa Bay Buccaneers): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick19, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 20 (Denver Broncos): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick20, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 21 (Detroit Lions): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick21, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>
+        <strong>Pick 22 (Miami Dolphins): </strong>
+        </td>
+        <td>
+        <%= f.collection_select(:pick22, @players, :id, :name, :include_blank => true) %>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
         <strong>Pick 23 (New York Giants): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick23, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 24 (Oakland Raiders): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick24, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 25 (Houston Texans): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick25, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 26 (Seattle Seahawks): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick26, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 27 (Kansas City Chiefs): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick27, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 28 (Dallas Cowboys): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick28, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 29 (Green Bay Packers): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick29, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 30 (Pittsburgh Steelers): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick30, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
+
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 31 (Atlanta Falcons): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick31, @players, :id, :name, :include_blank => true) %>
-    <p>
+        </td>
+    </tr>
         
-    </p>
+    <tr>
+        <td>
         <strong>Pick 32 (New Orleans Saints): </strong>
+        </td>
+        <td>
         <%= f.collection_select(:pick32, @players, :id, :name, :include_blank => true) %>
-    <p>
-        
+        </td>
+    </tr>
+</table>
     <p>
         <%= f.submit %>
     </p>

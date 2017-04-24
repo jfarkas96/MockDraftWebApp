@@ -1,3 +1,8 @@
+<style>
+    h1,h2,h3{
+        color: white;
+    }
+</style>
 <h1>
     <%= @player.name %>
 </h1><br><br>
@@ -74,5 +79,5 @@
 
 <% end %>
 <h3>
-    <%= link_to "Back to Players", controller: 'players' %>
+    <button><div class="buttontext"><%= link_to "Back to Players", controller: 'players' %></div></button>
 </h3>
