@@ -7,3 +7,4 @@ Feature: View information about individual teams draft
     Given I am on the home page
     When I click on the "Teams" link
     Then I should be on the "Teams" page
+

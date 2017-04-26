@@ -1,81 +1,104 @@
-<h1>
-    <%= @team.name %>
-</h1><br><br>
-
-<img
-    src=<%= @team.picture_link %>
->
-
-<h3>
-    Needs: 
-    <%= @team.needs %>
-</h3>
-
-<h3>
-    Round 1 Picks: 
-    <%= @team.round1 %>
-</h3>
-
-<h3>
-    Round 2 Picks: 
-    <%= @team.round2 %>
-</h3>
-
-<h3>
-    Round 3 Picks: 
-    <%= @team.round3 %>
-</h3>
-
-<h3>
-    Round 4 Picks: 
-    <%= @team.round4 %>
-</h3>
-
-<h3>
-    Round 5 Picks: 
-    <%= @team.round5 %>
-</h3>
-
-<h3>
-    Round 6 Picks: 
-    <%= @team.round6 %>
-</h3>
-
-<h3>
-    Round 7 Picks: 
-    <%= @team.round7 %>
-</h3>
-
-<% if @team.team_comments.exists? %>
-    <h2>Comments</h2>
-    <% @team.team_comments.each do |comment| %>
-        <p>
-            <strong>Commenter:</strong>
-            <%= comment.commenter %>
-        </p>
-    
-        <p>
-            <strong>Comment:</strong>
-            <%= comment.body %>
-        </p>
-    <% end %><br>
-<% end %>
-
-<h2>Add a comment:</h2>
-<%= form_for([@team, @team.team_comments.build]) do |f| %>
-    <p>
-        <%= f.label :commenter %><br>
-        <%= f.text_field :commenter %>
-    </p>
-    <p>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %>
-    </p>
-    <p>
-        <%= f.submit "Submit" %>
-    </p>
-<% end %>
-
-<h3>
-    <%= link_to "Back to Teams", controller: 'teams' %>
-</h3>
+<div class="container">
+    <div class="nav">
+        <div class="navtitle">
+            <h2>Links</h2>
+        </div>
+            <li><%= link_to 'Home', controller: 'welcome' %></li>
+            <li><%= link_to 'Teams', controller: 'teams' %></li>
+            <li><%= link_to 'Players', controller: 'players' %></li>
+            <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
+            <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
+    </div>
+        
+    <div class="main">
+        <h1>
+            <%= @team.name %>
+        </h1><br><br>
+        
+        <img
+            src=<%= @team.picture_link %>
+        >
+        
+        <h3>
+            Needs: 
+            <%= @team.needs %>
+        </h3>
+        
+        <h3>
+            Round 1 Picks: 
+            <%= @team.round1 %>
+        </h3>
+        
+        <h3>
+            Round 2 Picks: 
+            <%= @team.round2 %>
+        </h3>
+        
+        <h3>
+            Round 3 Picks: 
+            <%= @team.round3 %>
+        </h3>
+        
+        <h3>
+            Round 4 Picks: 
+            <%= @team.round4 %>
+        </h3>
+        
+        <h3>
+            Round 5 Picks: 
+            <%= @team.round5 %>
+        </h3>
+        
+        <h3>
+            Round 6 Picks: 
+            <%= @team.round6 %>
+        </h3>
+        
+        <h3>
+            Round 7 Picks: 
+            <%= @team.round7 %>
+        </h3>
+        
+        <% if @team.team_comments.exists? %>
+            <div class="comments">
+            <h2>Comments</h2>
+            <% @team.team_comments.each do |comment| %>
+                <p>
+                    <strong>Commenter:</strong>
+                    <%= comment.commenter %>
+                </p>
+            
+                <p>
+                    <strong>Comment:</strong>
+                    <%= comment.body %>
+                </p>
+            <% end %><br>
+            </div>
+        <% end %>
+        
+        <div class="newcomments">
+        <h2>Add a comment:</h2>
+        <%= form_for([@team, @team.team_comments.build]) do |f| %>
+            <p>
+                <%= f.label :commenter %><br>
+                <%= f.text_field :commenter %>
+            </p>
+            <p>
+                <%= f.label :body %><br>
+                <%= f.text_area :body %>
+            </p>
+            <p>
+                <%= f.submit "Submit" %>
+            </p>
+        <% end %>
+        </div>
+        
+        <br><br>
+        <button>
+            <div class="buttontext">
+                <%= link_to "Back to Teams", controller: 'teams' %>
+            </div>
+        </button>
+        
+    </div>
+</div>

@@ -1,39 +1,38 @@
 <div class="container">
-    
-<body>
     <div class="nav">
-    <h2>Links: </h2>
-    <ul>
-        <li><%= link_to 'Home', controller: 'welcome' %></li>
-        <li><%= link_to 'Teams', controller: 'teams' %></li>
-        <li><%= link_to 'Players', controller: 'players' %></li>
-        <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
-        <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
-    </ul>
+        <div class="navtitle">
+            <h2>Links</h2>
+        </div>
+            <li><%= link_to 'Home', controller: 'welcome' %></li>
+            <li><%= link_to 'Teams', controller: 'teams' %></li>
+            <li><%= link_to 'Players', controller: 'players' %></li>
+            <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
+            <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
     </div>
-    <div class ="main">
-</body>
-
-<h1>Players</h1><br><br>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Grade</th>
-        <th>Edit Player</th>
-        <th>Delete Player</th>
-    </tr>
-    
-    <% @players.each do |player| %>
-        <tr>
-            <td><%= link_to player.name, player_path(player) %></td>
-            <td><%= player.position %></td>
-            <td><%= player.grade %></td>
-            <td><%= link_to 'Edit', edit_player_path(player) %></td>
-            <td><%= link_to 'Delete', 
-                                    player_path(player),
-                                    method: :delete,
-                                    data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    <% end %>
-</table>
+        
+    <div class="main">
+        <h1>Players</h1><br><br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Grade</th>
+                <th>Edit Player</th>
+                <th>Delete Player</th>
+            </tr>
+            
+            <% @players.each do |player| %>
+            <tr>
+                <td><%= link_to player.name, player_path(player) %></td>
+                <td><%= player.position %></td>
+                <td><%= player.grade %></td>
+                <td><%= link_to 'Edit', edit_player_path(player) %></td>
+                <td><%= link_to 'Delete', 
+                        player_path(player),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+</div>

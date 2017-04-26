@@ -1,35 +1,35 @@
 <div class="container">
+    <div class="nav">
+        <div class="navtitle">
+            <h2>Links</h2>
+        </div>
+            <li><%= link_to 'Home', controller: 'welcome' %></li>
+            <li><%= link_to 'Teams', controller: 'teams' %></li>
+            <li><%= link_to 'Players', controller: 'players' %></li>
+            <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
+            <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
+    </div>
     
-<body>
-<div class="nav">
-    <h2>Links: </h2>
-    <ul>
-        <li><%= link_to 'Home', controller: 'welcome' %></li>
-        <li><%= link_to 'Teams', controller: 'teams' %></li>
-        <li><%= link_to 'Players', controller: 'players' %></li>
-        <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
-        <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
-    </ul>
-</div>
-<div class ="main">
-
-<h1>Teams</h1><br><br>
-<div class="columns">
-<table>
-    <% @teams.each do |team| %>
-        <tr>
-            <td><img
-                    src=<%= team.picture_link %>
-                    style="width:85px;height:76px;"
-                >
-            </td>
-            <td><%= link_to team.name, team_path(team) %></td>
-            <td><%= link_to 'Edit', edit_team_path(team) %></td>
-            <td><%= link_to 'Delete', 
-                                    team_path(team),
-                                    method: :delete,
-                                    data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    <% end %>
-</table>
+    <div class="main">
+        <h1>Teams</h1><br><br>
+        <div class="columns">
+            <table>
+                <% @teams.each do |team| %>
+                    <tr>
+                        <td><img
+                                src=<%= team.picture_link %>
+                                style="width:85px;height:76px;"
+                            >
+                        </td>
+                        <td><%= link_to team.name, team_path(team) %></td>
+                        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+                        <td><%= link_to 'Delete', 
+                                team_path(team),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
 </div>

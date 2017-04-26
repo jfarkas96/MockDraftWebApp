@@ -1,83 +1,104 @@
-<style>
-    h1,h2,h3{
-        color: white;
-    }
-</style>
-<h1>
-    <%= @player.name %>
-</h1><br><br>
-
-<img 
-    src=<%= @player.picture_link %>
-    style="border: 3px solid #000000;"
-/>
-
-<h3>
-    College:
-    <%= @player.college %>
-</h3>
-
-<h3>
-    Position:
-    <%= @player.position %>
-</h3>
-
-<h3>
-    Grade:
-    <%= @player.grade%>
-</h3>
-
-<h3>
-    Height:
-    <%= @player.height %>
-</h3>
-
-<h3>
-    Weight:
-    <%= @player.weight %>
-</h3>
-
-<h3>Highlights:</h3>
-
-    <iframe width="560" height="315"
-    style="border: 3px solid #FF0000;"
-    src=<%= @player.highlights_link %> frameborder="0" allowfullscreen>
-    </iframe><br><br>
-    
-<div class="comments">
-<% if @player.player_comments.exists? %>    
-    <h2>Comments</h2>
-    <% @player.player_comments.each do |comment| %>
-        <div class="individual_comment">
-        <p>
-            <strong>Commenter:</strong>
-            <%= comment.commenter %>
-        </p>
-    
-        <p>
-            <strong>Comment:</strong>
-            <%= comment.body %>
-        </p>
+<div class="container">
+    <div class="nav">
+        <div class="navtitle">
+            <h2>Links</h2>
         </div>
-    <% end %>
-<% end %>
-</div>
+            <li><%= link_to 'Home', controller: 'welcome' %></li>
+            <li><%= link_to 'Teams', controller: 'teams' %></li>
+            <li><%= link_to 'Players', controller: 'players' %></li>
+            <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
+            <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
+    </div>
+    
+    <div class="main">
+        <div class ="bio">
+        <h1>
+            <%= @player.name %>
+        </h1><br><br>
 
-<h2>Add a comment:</h2>
-<%= form_for([@player, @player.player_comments.build]) do |f| %>
-    <p>
-        <%= f.label :commenter %><br>
-        <%= f.text_field :commenter %>
-    </p>
-    <p>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %>
-    </p>
-    <p>
-        <%= f.submit "Submit" %>
-    </p>
-
-<% end %>
-<h3>
-    <button><div class="buttontext"><%= link_to "Back to Players", controller: 'players' %></div></button>
-</h3>
+        <img 
+            src=<%= @player.picture_link %>
+            style="border: 3px solid #000000;"
+        />
+        
+        <h3>
+            College:
+            <%= @player.college %>
+        </h3>
+        
+        <h3>
+            Position:
+            <%= @player.position %>
+        </h3>
+        
+        <h3>
+            Grade:
+            <%= @player.grade%>
+        </h3>
+        
+        <h3>
+            Height:
+            <%= @player.height %>
+        </h3>
+        
+        <h3>
+            Weight:
+            <%= @player.weight %>
+        </h3>
+        </div>
+        
+        <h3>Highlights:</h3>
+        
+        <iframe width="560" height="315"
+            style="border: 3px solid #FF0000;"
+            src=<%= @player.highlights_link %> frameborder="0" allowfullscreen>
+        </iframe><br><br>
+            
+        <% if @player.player_comments.exists? %> 
+            <div class="comments">
+            <h2>Comments</h2>
+            <% @player.player_comments.each do |comment| %>
+                <div class="individual_comment">
+                <p>
+                    <strong>Commenter:</strong>
+                    <%= comment.commenter %>
+                </p>
+            
+                <p>
+                    <strong>Comment:</strong>
+                    <%= comment.body %>
+                </p>
+                </div>
+            <% end %>
+            </div>
+        <% end %>
+        
+        <br><br>
+        
+        <div class="newcomments">
+        <h2>Add a comment:</h2>
+        <%= form_for([@player, @player.player_comments.build]) do |f| %>
+            <p>
+                <%= f.label :commenter %><br>
+                <%= f.text_field :commenter %>
+            </p>
+            <p>
+                <%= f.label :body %><br>
+                <%= f.text_area :body %>
+            </p>
+            <p>
+                <%= f.submit "Submit" %>
+            </p>
+        <% end %>
+        </div>
+        
+        
+        <br><br>
+        <button>
+            <div class="buttontext">
+                <%= link_to "Back to Players", controller: 'players' %>
+            </div>
+        </button>
+        
+    </div>
+</div>    

@@ -2,14 +2,12 @@
     
 <body>
 <div class="nav">
-    <h2>Links: </h2>
-    <ul>
+    <div class="navtitle"><h2>Links</h2></div>
         <li><%= link_to 'Home', controller: 'welcome' %></li>
         <li><%= link_to 'Teams', controller: 'teams' %></li>
         <li><%= link_to 'Players', controller: 'players' %></li>
         <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
         <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
-    </ul>
 </div>
 <div class ="main">
 

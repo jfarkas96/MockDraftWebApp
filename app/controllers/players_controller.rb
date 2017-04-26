@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
     def new
+        @player = Player.new
     end
     
     def show
@@ -9,8 +10,11 @@ class PlayersController < ApplicationController
     def create
         @player = Player.new(player_params)
         
-        @player.save
-        redirect_to new_player_path
+        if @player.save
+            redirect_to new_player_path
+        else
+            render 'new'
+        end
     end
     
     def index

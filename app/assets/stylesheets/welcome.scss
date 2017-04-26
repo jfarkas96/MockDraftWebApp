@@ -19,20 +19,39 @@ html {
 h1,h2 {
    //background-color: white;
    display: inline;
-   background: rgba(255,255,255,0)
+   background: rgba(255,255,255,0);
 }
 
 table,th,td {
   //background-color: white;
-  background: rgba(255,255,255,0.3)
+  background: rgba(255,255,255,0.3);
+  padding: 5px;
+}
+
+td {
+  vertical-align: middle;
+}
+
+.pick_td {
+  text-align:left;
 }
 
 .nav {
-  max-width: 25%;
-  min-width: 140px;
-  flex: 1;
-  background: rgba(255,255,255, 0.3);
-  height: 150px;
+  background: rgba(0,0,0, 0.5);
+  height: 125px;
+  width: 200px;
+  color: white;
+  padding: 10px;
+}
+
+.nav a:link, .nav a:visited {
+  text-decoration: none;
+  color: lightskyblue;
+}
+
+.navtitle {
+  text-align: center;
+  text-decoration: underline;
 }
 
 .nav h1 {
@@ -48,38 +67,78 @@ table,th,td {
 }
 
 .columns {
-    -webkit-column-count: 4; /* Chrome, Safari, Opera */
-    -moz-column-count: 4; /* Firefox */
-    column-count: 4;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
     vertical-align: middle;
     column-gap: 20px;
     display: inline-block;
     
 }
 
-td {
-  text-align: center;
-  vertical-align: middle;
-}
-
 tr {
   vertical-align: middle;
 }
 
-.comments{
+input[type=button], input[type=submit] {
+    background-color: brown;
+    border: 2px solid black;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+  background-color: brown;
+  border: 2px solid black;
+  color: white;
+  padding: 16px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttontext a:link, .buttontext a:visited {
+  color:white;
+  text-decoration: none;
+}
+
+.title {
+  background-color: rgba(0,0,0,0.3);
+  display: inline-block;
+}
+
+.bio {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.comments {
+  width: 500px;
+  padding: 10px;
+  display: inline-block;
   background-color: rgba(255,255,255,0.5);
-  
 }
 
 .individual_comment{
   border: 1px solid black;
 }
 
-.buttontext a:link, .buttontext a:visited {
-  color: black;
+.newcomments {
+  background-color: rgba(0,0,0,0.4);
+  display: inline-block;
+  min-width: 500px;
+  color: white;
+  padding: 10px;
+}
+
+a:link, a:visited {
   text-decoration: none;
 }
 
-//body {
-//    background-color: white;
-//}
+label {
+  display: block;
+}
+
+textarea { 
+  display: block;
+}
