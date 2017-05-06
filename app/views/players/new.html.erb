@@ -11,9 +11,12 @@
     </div>
         
     <div class="main">
-        <h1>New Player</h1>
+        <div class="title">
+            <h1>New Player</h1>
+        </div>
         <%= form_for :player, url: players_path do |f| %>
         <% if @player.errors.any? %>
+            <div class="error">
             <div id="error_explanation">
                 <h2>
                     <%= pluralize(@player.errors.count, "error") %> prohibited
@@ -25,7 +28,11 @@
                     <% end %>
                 </ul>
             </div>
+            </div>
         <% end %>
+        <br><br>
+        
+            <div class="form">
             <p>
                 <%= f.label :name %>
                 <%= f.text_field :name %>
@@ -60,7 +67,13 @@
             </p>
             <p>
                 <%= f.submit %>
+                <button>
+                    <div class="buttontext">
+                        <%= link_to "Cancel", 'players#index' %>
+                    </div>
+                </button>
             </p>
+            </div>
         <% end %>
     </div>
 </div>

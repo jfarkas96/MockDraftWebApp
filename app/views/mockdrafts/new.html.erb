@@ -11,12 +11,26 @@
     </div>
         
     <div class="main">
-        <h1>New Mock Draft</h1>
+        <div class="title"><h1>New Mock Draft</h1></div>
         <%= form_for :mockdraft, url: mockdrafts_path do |f| %>
-
+        <% if @mockdraft.errors.any? %>
+            <div class="error">
+            <div id="error_explanation">
+            <h2>
+                <%= pluralize(@mockdraft.errors.count, "error") %> prohibited
+                this mock draft from being saved:
+            </h2>
+            <ul>
+                <% @mockdraft.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+            </div>
+            </div>
+        <% end %>
         <p>
-            <strong>Creator's Name:</strong>
-            <%= f.text_field :creator %>
+            <div class="title"><strong>Creator's Name:</strong>
+            <%= f.text_field :creator %></div>
         </p>
         
         <table>   
@@ -27,7 +41,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick1, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick1, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
 
@@ -38,7 +52,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick2, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick2, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
         
@@ -49,7 +63,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick3, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick3, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
         
@@ -60,7 +74,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick4, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick4, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -71,7 +85,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick5, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick5, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -82,7 +96,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick6, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick6, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -93,7 +107,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick7, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick7, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -104,7 +118,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick8, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick8, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -115,7 +129,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick9, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick9, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -126,7 +140,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick10, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick10, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -137,7 +151,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick11, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick11, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -148,7 +162,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick12, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick12, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -159,7 +173,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick13, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick13, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -170,7 +184,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick14, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick14, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -181,7 +195,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick15, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick15, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -192,7 +206,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick16, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick16, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -203,7 +217,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick17, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick17, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -214,7 +228,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick18, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick18, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -225,7 +239,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick19, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick19, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -236,7 +250,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick20, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick20, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -247,7 +261,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick21, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick21, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -258,7 +272,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick22, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick22, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
             
@@ -269,7 +283,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick23, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick23, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -280,7 +294,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick24, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick24, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -291,7 +305,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick25, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick25, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -302,7 +316,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick26, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick26, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -313,7 +327,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick27, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick27, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -324,7 +338,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick28, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick28, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -335,7 +349,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick29, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick29, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -346,7 +360,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick30, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick30, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
         
@@ -358,7 +372,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick31, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick31, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
                 
@@ -369,7 +383,7 @@
                 </td>
             </div>
                 <td>
-                    <%= f.collection_select(:pick32, @players, :id, :name, :include_blank => true) %>
+                    <%= f.collection_select(:pick32, @players, :id, :name, :include_blank => false) %>
                 </td>
             </tr>
         </table>

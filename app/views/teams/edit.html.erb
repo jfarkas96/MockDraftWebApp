@@ -11,10 +11,13 @@
     </div>
     
     <div class="main">
-        <h1>Editing Team</h1>
+        <div class ="title">
+            <h1>Editing Team</h1>
+        </div>
         
         <%= form_for :team, url: team_path(@team), method: :patch do |f| %>
             <% if @team.errors.any? %>
+            <div class="error">
             <div id="error_explanation">
                 <h2>
                     <%= pluralize(@team.errors.count, "error") %> prohibited
@@ -26,7 +29,12 @@
                     <% end %>
                 </ul>
             </div>
+            </div>
             <% end %>
+            <br><br>
+    
+            
+            <div class="form">
             <p>
                 <%= f.label :name %>
                 <%= f.text_field :name %>
@@ -67,9 +75,16 @@
                 <%= f.label :picture_link %>
                 <%= f.text_field :picture_link %>
             </p>
+            
             <p>
                 <%= f.submit %>
+                <button>
+                    <div class="buttontext">
+                        <%= link_to "Cancel", controller: 'teams' %>
+                    </div>
+                </button>
             </p>
+            </div>
         <% end %>
     </div>
 </div>

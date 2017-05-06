@@ -45,14 +45,18 @@
             Weight:
             <%= @player.weight %>
         </h3>
-        </div>
+        </div><br><br>
         
+        <div class="highlights">
         <h3>Highlights:</h3>
         
         <iframe width="560" height="315"
             style="border: 3px solid #FF0000;"
             src=<%= @player.highlights_link %> frameborder="0" allowfullscreen>
-        </iframe><br><br>
+        </iframe>
+        </div>
+        <br><br>
+    
             
         <% if @player.player_comments.exists? %> 
             <div class="comments">
@@ -79,11 +83,11 @@
         <h2>Add a comment:</h2>
         <%= form_for([@player, @player.player_comments.build]) do |f| %>
             <p>
-                <%= f.label :commenter %><br>
+                <%= f.label :commenter %>
                 <%= f.text_field :commenter %>
             </p>
             <p>
-                <%= f.label :body %><br>
+                <%= f.label :body %>
                 <%= f.text_area :body %>
             </p>
             <p>

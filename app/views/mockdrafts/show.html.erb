@@ -1,4 +1,16 @@
-<h1><%= @mockdraft.creator %>'s Mock Draft</h1>
+<div class = "container">
+<div class="nav">
+        <div class="navtitle">
+            <h2>Links</h2>
+        </div>
+            <li><%= link_to 'Home', controller: 'welcome' %></li>
+            <li><%= link_to 'Teams', controller: 'teams' %></li>
+            <li><%= link_to 'Players', controller: 'players' %></li>
+            <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
+            <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
+    </div>
+<div class="main">
+<div class="title"><h1><%= @mockdraft.creator %>'s Mock Draft</h1></div>
 <table>
     <tr>
         <th>Pick Number</th>
@@ -194,38 +206,49 @@
         <td><%= link_to @NO.name, team_path(@NO.id) %></td>
         <td><%= link_to @players.find(@mockdraft.pick32).name, player_path(@mockdraft.pick32) %></td>
     </tr>
-</table><br>
+</table>
+<br>
 
-<% if @mockdraft.mock_draft_comments.exists? %>
-    <h2>Comments</h2><br>>
-    <% @mockdraft.mock_draft_comments.each do |comment| %>
-        <p>
-            <strong>Commenter:</strong>
-            <%= comment.commenter %>
-        </p>
+<div class="comments">
+<h2>Comments</h2>
+<% @mockdraft.mock_draft_comments.each do |comment| %>
+    <div class="individual_comment">
+    <p>
+        <strong>Commenter:</strong>
+        <%= comment.commenter %>
+    </p>
     
-        <p>
-            <strong>Comment:</strong>
-            <%= comment.body %>
-        </p><br>
-    <% end %>
+    <p>
+        <strong>Comment:</strong>
+        <%= comment.body %>
+    </p>
+    </div>
 <% end %>
+</div>
+<br><br>
 
+<div class = "newcomments">
 <h2>Add a comment:</h2>
 <%= form_for([@mockdraft, @mockdraft.mock_draft_comments.build]) do |f| %>
     <p>
-        <%= f.label :commenter %><br>
+        <%= f.label :commenter %>
         <%= f.text_field :commenter %>
     </p>
     <p>
-        <%= f.label :body %><br>
+        <%= f.label :body %>
         <%= f.text_area :body %>
     </p>
     <p>
-        <%= f.submit "Submit" %>
+        <%= f.submit %>
     </p>
 <% end %>
+</div>
+<br><br>
+        <button>
+            <div class="buttontext">
+                <%= link_to "Back to User Mock Drafts", controller: 'mockdrafts' %>
+            </div>
+        </button>
+</div>
+</div>
 
-<h3>
-    <%= link_to "Back to User Mock Drafts", controller: 'mockdrafts' %>
-</h3>

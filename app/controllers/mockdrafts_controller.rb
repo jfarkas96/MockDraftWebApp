@@ -4,14 +4,20 @@ class MockdraftsController < ApplicationController
     end
 
     def new
+        @mockdraft = Mockdraft.new
         @players = Player.all
+        @teams = Team.all
     end
     
     def create
         @mockdraft = Mockdraft.new(mockdraft_params)
+        @players = Player.all
         
-        @mockdraft.save
-        redirect_to @mockdraft
+        if @mockdraft.save
+            redirect_to @mockdraft
+        else
+            render 'new'
+        end
     end
 
     def show
@@ -26,6 +32,7 @@ class MockdraftsController < ApplicationController
     end
     
     def update
+        @players = Player.all
         @mockdraft = Mockdraft.find(params[:id])
         
         if @mockdraft.update(mockdraft_params)

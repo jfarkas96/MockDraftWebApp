@@ -20,12 +20,24 @@ h1,h2 {
    //background-color: white;
    display: inline;
    background: rgba(255,255,255,0);
+   color: white;
+}
+
+h3{
+  color: white;
+  margin-top: 5px;
 }
 
 table,th,td {
   //background-color: white;
-  background: rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.5);
   padding: 5px;
+  border-color: white;
+  color: white;
+}
+
+td a:link, td a:visited {
+  color: lightskyblue;
 }
 
 td {
@@ -37,11 +49,15 @@ td {
 }
 
 .nav {
-  background: rgba(0,0,0, 0.5);
+  background: rgba(0,0,0, 0.6);
   height: 125px;
+  min-height: 125px;
+  min-width: 200px;
   width: 200px;
   color: white;
   padding: 10px;
+  border-color: white;
+  border: solid;
 }
 
 .nav a:link, .nav a:visited {
@@ -73,7 +89,6 @@ td {
     vertical-align: middle;
     column-gap: 20px;
     display: inline-block;
-    
 }
 
 tr {
@@ -104,31 +119,56 @@ button {
 }
 
 .title {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.6);
   display: inline-block;
+  padding: 10px;
+  border: solid white;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .bio {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  border: solid white;
+  color: white;
+  padding: 10px;
+}
+
+.teambio {
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  border: solid white;
+  color: white;
+  padding: 10px;
 }
 
 .comments {
   width: 500px;
   padding: 10px;
   display: inline-block;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  border: solid white;
 }
 
 .individual_comment{
-  border: 1px solid black;
+  border: solid white;
+  padding: 5px;
+  color: white;
+}
+
+.individual_comment + .individual_comment {
+  border-top: 0px;
 }
 
 .newcomments {
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.6);
   display: inline-block;
   min-width: 500px;
   color: white;
   padding: 10px;
+  border: solid white;
 }
 
 a:link, a:visited {
@@ -141,4 +181,43 @@ label {
 
 textarea { 
   display: block;
+}
+
+.error {
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  border: solid white;
+}
+
+.error_explanation {
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  border: solid white;
+}
+
+body {
+  margin-top: 10px;
+}
+
+.highlights {
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  border: solid white;
+}
+
+li {
+  color: white;
+}
+.form {
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  border: solid white;
 }
