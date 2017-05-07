@@ -1,5 +1,5 @@
 <div class = "container">
-<div class="nav">
+    <div class="nav">
         <div class="navtitle">
             <h2>Links</h2>
         </div>
@@ -9,246 +9,248 @@
             <li><%= link_to 'Create a Mock Draft', new_mockdraft_path %></li>
             <li><%= link_to 'User Mock Drafts', controller: 'mockdrafts' %></li>
     </div>
-<div class="main">
-<div class="title"><h1><%= @mockdraft.creator %>'s Mock Draft</h1></div>
-<table>
-    <tr>
-        <th>Pick Number</th>
-        <th>Team</th>
-        <th>Player</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <% @CLE = @teams.where(name: "Cleveland Browns").first %>
-        <td><%= link_to @CLE.name, team_path(@CLE.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick1).name, player_path(@mockdraft.pick1) %></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <% @SF = @teams.where(name: "San Francisco 49ers").first %>
-        <td><%= link_to @SF.name, team_path(@SF.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick2).name, player_path(@mockdraft.pick2) %></td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <% @CHI = @teams.where(name: "Chicago Bears").first %>
-        <td><%= link_to @CHI.name, team_path(@CHI.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick3).name, player_path(@mockdraft.pick3) %></td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <% @JAX = @teams.where(name: "Jacksonville Jaguars").first %>
-        <td><%= link_to @JAX.name, team_path(@JAX.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick4).name, player_path(@mockdraft.pick4) %></td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <% @TEN = @teams.where(name: "Tennessee Titans").first %>
-        <td><%= link_to @TEN.name, team_path(@TEN.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick5).name, player_path(@mockdraft.pick5) %></td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <% @NYJ = @teams.where(name: "New York Jets").first %>
-        <td><%= link_to @NYJ.name, team_path(@NYJ.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick6).name, player_path(@mockdraft.pick6) %></td>
-    </tr>
-    <tr>
-        <td>7</td>
-        <% @LAC = @teams.where(name: "Los Angeles Chargers").first %>
-        <td><%= link_to @LAC.name, team_path(@LAC.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick7).name, player_path(@mockdraft.pick7) %></td>
-    </tr>
-    <tr>
-        <td>8</td>
-        <% @CAR = @teams.where(name: "Carolina Panthers").first %>
-        <td><%= link_to @CAR.name, team_path(@CAR.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick8).name, player_path(@mockdraft.pick8) %></td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <% @CIN = @teams.where(name: "Cincinnati Bengals").first %>
-        <td><%= link_to @CIN.name, team_path(@CIN.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick9).name, player_path(@mockdraft.pick9) %></td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <% @BUF = @teams.where(name: "Buffalo Bills").first %>
-        <td><%= link_to @BUF.name, team_path(@BUF.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick10).name, player_path(@mockdraft.pick10) %></td>
-    </tr>
-    <tr>
-        <td>11</td>
-        <% @NO = @teams.where(name: "New Orleans Saints").first %>
-        <td><%= link_to @NO.name, team_path(@NO.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick11).name, player_path(@mockdraft.pick11) %></td>
-    </tr>
-    <tr>
-        <td>12</td>
-        <td><%= link_to @CLE.name, team_path(@CLE.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick12).name, player_path(@mockdraft.pick12) %></td>
-    </tr>
-    <tr>
-        <td>13</td>
-        <% @ARI = @teams.where(name: "Arizona Cardinals").first %>
-        <td><%= link_to @ARI.name, team_path(@ARI.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick13).name, player_path(@mockdraft.pick13) %></td>
-    </tr>
-    <tr>
-        <td>14</td>
-        <% @PHI = @teams.where(name: "Philadelphia Eagles").first %>
-        <td><%= link_to @PHI.name, team_path(@PHI.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick14).name, player_path(@mockdraft.pick14) %></td>
-    </tr>
-    <tr>
-        <td>15</td>
-        <% @IND = @teams.where(name: "Indianapolis Colts").first %>
-        <td><%= link_to @IND.name, team_path(@IND.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick15).name, player_path(@mockdraft.pick15) %></td>
-    </tr>
-    <tr>
-        <td>16</td>
-        <% @BAL = @teams.where(name: "Baltimore Ravens").first %>
-        <td><%= link_to @BAL.name, team_path(@BAL.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick16).name, player_path(@mockdraft.pick16) %></td>
-    </tr>
-    <tr>
-        <td>17</td>
-        <% @WAS = @teams.where(name: "Washington Redskins").first %>
-        <td><%= link_to @WAS.name, team_path(@WAS.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick17).name, player_path(@mockdraft.pick17) %></td>
-    </tr>
-    <tr>
-        <td>18</td>
-        <td><%= link_to @TEN.name, team_path(@TEN.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick18).name, player_path(@mockdraft.pick18) %></td>
-    </tr>
-    <tr>
-        <td>19</td>
-        <% @TB = @teams.where(name: "Tampa Bay Buccaneers").first %>
-        <td><%= link_to @TB.name, team_path(@TB.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick19).name, player_path(@mockdraft.pick19) %></td>
-    </tr>
-    <tr>
-        <td>20</td>
-        <% @DEN = @teams.where(name: "Denver Broncos").first %>
-        <td><%= link_to @DEN.name, team_path(@DEN.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick20).name, player_path(@mockdraft.pick20) %></td>
-    </tr>
-    <tr>
-        <td>21</td>
-        <% @DET = @teams.where(name: "Detroit Lions").first %>
-        <td><%= link_to @DET.name, team_path(@DET.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick21).name, player_path(@mockdraft.pick21) %></td>
-    </tr>
-    <tr>
-        <td>22</td>
-        <% @MIA = @teams.where(name: "Miami Dolphins").first %>
-        <td><%= link_to @MIA.name, team_path(@MIA.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick22).name, player_path(@mockdraft.pick22) %></td>
-    </tr>
-    <tr>
-        <td>23</td>
-        <% @NYG = @teams.where(name: "New York Giants").first %>
-        <td><%= link_to @NYG.name, team_path(@NYG.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick23).name, player_path(@mockdraft.pick23) %></td>
-    </tr>
-    <tr>
-        <td>24</td>
-        <% @OAK = @teams.where(name: "Oakland Raiders").first %>
-        <td><%= link_to @OAK.name, team_path(@OAK.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick24).name, player_path(@mockdraft.pick24) %></td>
-    </tr>
-    <tr>
-        <td>25</td>
-        <% @HOU = @teams.where(name: "Houston Texans").first %>
-        <td><%= link_to @HOU.name, team_path(@HOU.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick25).name, player_path(@mockdraft.pick25) %></td>
-    </tr>
-    <tr>
-        <td>26</td>
-        <% @SEA = @teams.where(name: "Seattle Seahawks").first %>
-        <td><%= link_to @SEA.name, team_path(@SEA.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick26).name, player_path(@mockdraft.pick26) %></td>
-    </tr>
-    <tr>
-        <td>27</td>
-        <% @KC = @teams.where(name: "Kansas City Chiefs").first %>
-        <td><%= link_to @KC.name, team_path(@KC.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick27).name, player_path(@mockdraft.pick27) %></td>
-    </tr>
-    <tr>
-        <td>28</td>
-        <% @DAL = @teams.where(name: "Dallas Cowboys").first %>
-        <td><%= link_to @DAL.name, team_path(@DAL.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick28).name, player_path(@mockdraft.pick28) %></td>
-    </tr>
-    <tr>
-        <td>29</td>
-        <% @GB = @teams.where(name: "Green Bay Packers").first %>
-        <td><%= link_to @GB.name, team_path(@GB.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick29).name, player_path(@mockdraft.pick29) %></td>
-    </tr>
-    <tr>
-        <td>30</td>
-        <% @PIT = @teams.where(name: "Pittsburgh Steelers").first %>
-        <td><%= link_to @PIT.name, team_path(@PIT.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick30).name, player_path(@mockdraft.pick30) %></td>
-    </tr>
-    <tr>
-        <td>31</td>
-        <% @ATL = @teams.where(name: "Atlanta Falcons").first %>
-        <td><%= link_to @ATL.name, team_path(@ATL.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick31).name, player_path(@mockdraft.pick31) %></td>
-    </tr>
-    <tr>
-        <td>32</td>
-        <td><%= link_to @NO.name, team_path(@NO.id) %></td>
-        <td><%= link_to @players.find(@mockdraft.pick32).name, player_path(@mockdraft.pick32) %></td>
-    </tr>
-</table>
-<br>
-
-<div class="comments">
-<h2>Comments</h2>
-<% @mockdraft.mock_draft_comments.each do |comment| %>
-    <div class="individual_comment">
-    <p>
-        <strong>Commenter:</strong>
-        <%= comment.commenter %>
-    </p>
+    <div class="main">
+        <div class="title"><h1><%= @mockdraft.creator %>'s Mock Draft</h1></div>
+        <table>
+            <tr>
+                <th>Pick Number</th>
+                <th>Team</th>
+                <th>Player</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <% @CLE = @teams.where(name: "Cleveland Browns").first %>
+                <td><%= link_to @CLE.name, team_path(@CLE.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick1).name, player_path(@mockdraft.pick1) %></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <% @SF = @teams.where(name: "San Francisco 49ers").first %>
+                <td><%= link_to @SF.name, team_path(@SF.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick2).name, player_path(@mockdraft.pick2) %></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <% @CHI = @teams.where(name: "Chicago Bears").first %>
+                <td><%= link_to @CHI.name, team_path(@CHI.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick3).name, player_path(@mockdraft.pick3) %></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <% @JAX = @teams.where(name: "Jacksonville Jaguars").first %>
+                <td><%= link_to @JAX.name, team_path(@JAX.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick4).name, player_path(@mockdraft.pick4) %></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <% @TEN = @teams.where(name: "Tennessee Titans").first %>
+                <td><%= link_to @TEN.name, team_path(@TEN.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick5).name, player_path(@mockdraft.pick5) %></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <% @NYJ = @teams.where(name: "New York Jets").first %>
+                <td><%= link_to @NYJ.name, team_path(@NYJ.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick6).name, player_path(@mockdraft.pick6) %></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <% @LAC = @teams.where(name: "Los Angeles Chargers").first %>
+                <td><%= link_to @LAC.name, team_path(@LAC.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick7).name, player_path(@mockdraft.pick7) %></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <% @CAR = @teams.where(name: "Carolina Panthers").first %>
+                <td><%= link_to @CAR.name, team_path(@CAR.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick8).name, player_path(@mockdraft.pick8) %></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <% @CIN = @teams.where(name: "Cincinnati Bengals").first %>
+                <td><%= link_to @CIN.name, team_path(@CIN.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick9).name, player_path(@mockdraft.pick9) %></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <% @BUF = @teams.where(name: "Buffalo Bills").first %>
+                <td><%= link_to @BUF.name, team_path(@BUF.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick10).name, player_path(@mockdraft.pick10) %></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <% @NO = @teams.where(name: "New Orleans Saints").first %>
+                <td><%= link_to @NO.name, team_path(@NO.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick11).name, player_path(@mockdraft.pick11) %></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td><%= link_to @CLE.name, team_path(@CLE.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick12).name, player_path(@mockdraft.pick12) %></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <% @ARI = @teams.where(name: "Arizona Cardinals").first %>
+                <td><%= link_to @ARI.name, team_path(@ARI.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick13).name, player_path(@mockdraft.pick13) %></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <% @PHI = @teams.where(name: "Philadelphia Eagles").first %>
+                <td><%= link_to @PHI.name, team_path(@PHI.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick14).name, player_path(@mockdraft.pick14) %></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <% @IND = @teams.where(name: "Indianapolis Colts").first %>
+                <td><%= link_to @IND.name, team_path(@IND.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick15).name, player_path(@mockdraft.pick15) %></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <% @BAL = @teams.where(name: "Baltimore Ravens").first %>
+                <td><%= link_to @BAL.name, team_path(@BAL.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick16).name, player_path(@mockdraft.pick16) %></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <% @WAS = @teams.where(name: "Washington Redskins").first %>
+                <td><%= link_to @WAS.name, team_path(@WAS.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick17).name, player_path(@mockdraft.pick17) %></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td><%= link_to @TEN.name, team_path(@TEN.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick18).name, player_path(@mockdraft.pick18) %></td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <% @TB = @teams.where(name: "Tampa Bay Buccaneers").first %>
+                <td><%= link_to @TB.name, team_path(@TB.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick19).name, player_path(@mockdraft.pick19) %></td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <% @DEN = @teams.where(name: "Denver Broncos").first %>
+                <td><%= link_to @DEN.name, team_path(@DEN.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick20).name, player_path(@mockdraft.pick20) %></td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <% @DET = @teams.where(name: "Detroit Lions").first %>
+                <td><%= link_to @DET.name, team_path(@DET.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick21).name, player_path(@mockdraft.pick21) %></td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <% @MIA = @teams.where(name: "Miami Dolphins").first %>
+                <td><%= link_to @MIA.name, team_path(@MIA.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick22).name, player_path(@mockdraft.pick22) %></td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <% @NYG = @teams.where(name: "New York Giants").first %>
+                <td><%= link_to @NYG.name, team_path(@NYG.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick23).name, player_path(@mockdraft.pick23) %></td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <% @OAK = @teams.where(name: "Oakland Raiders").first %>
+                <td><%= link_to @OAK.name, team_path(@OAK.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick24).name, player_path(@mockdraft.pick24) %></td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <% @HOU = @teams.where(name: "Houston Texans").first %>
+                <td><%= link_to @HOU.name, team_path(@HOU.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick25).name, player_path(@mockdraft.pick25) %></td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <% @SEA = @teams.where(name: "Seattle Seahawks").first %>
+                <td><%= link_to @SEA.name, team_path(@SEA.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick26).name, player_path(@mockdraft.pick26) %></td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <% @KC = @teams.where(name: "Kansas City Chiefs").first %>
+                <td><%= link_to @KC.name, team_path(@KC.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick27).name, player_path(@mockdraft.pick27) %></td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <% @DAL = @teams.where(name: "Dallas Cowboys").first %>
+                <td><%= link_to @DAL.name, team_path(@DAL.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick28).name, player_path(@mockdraft.pick28) %></td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <% @GB = @teams.where(name: "Green Bay Packers").first %>
+                <td><%= link_to @GB.name, team_path(@GB.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick29).name, player_path(@mockdraft.pick29) %></td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <% @PIT = @teams.where(name: "Pittsburgh Steelers").first %>
+                <td><%= link_to @PIT.name, team_path(@PIT.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick30).name, player_path(@mockdraft.pick30) %></td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <% @ATL = @teams.where(name: "Atlanta Falcons").first %>
+                <td><%= link_to @ATL.name, team_path(@ATL.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick31).name, player_path(@mockdraft.pick31) %></td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td><%= link_to @NO.name, team_path(@NO.id) %></td>
+                <td><%= link_to @players.find(@mockdraft.pick32).name, player_path(@mockdraft.pick32) %></td>
+            </tr>
+        </table>
+        <br>
+        
+        <% if @mockdraft.mock_draft_comments.exists? %>
+            <div class="comments">
+                <h2>Comments</h2>
+                <% @mockdraft.mock_draft_comments.each do |comment| %>
+                <div class="individual_comment">
+                    <p>
+                        <strong>Commenter:</strong>
+                        <%= comment.commenter %>
+                    </p>
+            
+                    <p>
+                        <strong>Comment:</strong>
+                        <%= comment.body %>
+                    </p>
+                </div>
+                <% end %>
+            </div>
+        <% end %>
+        <br><br>
     
-    <p>
-        <strong>Comment:</strong>
-        <%= comment.body %>
-    </p>
-    </div>
-<% end %>
-</div>
-<br><br>
-
-<div class = "newcomments">
-<h2>Add a comment:</h2>
-<%= form_for([@mockdraft, @mockdraft.mock_draft_comments.build]) do |f| %>
-    <p>
-        <%= f.label :commenter %>
-        <%= f.text_field :commenter %>
-    </p>
-    <p>
-        <%= f.label :body %>
-        <%= f.text_area :body %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
-</div>
-<br><br>
+        <div class = "newcomments">
+            <h2>Add a comment:</h2>
+            <%= form_for([@mockdraft, @mockdraft.mock_draft_comments.build]) do |f| %>
+                <p>
+                    <%= f.label :commenter %>
+                    <%= f.text_field :commenter %>
+                </p>
+                <p>
+                    <%= f.label :body %>
+                    <%= f.text_area :body %>
+                </p>
+                <p>
+                    <%= f.submit "Submit" %>
+                </p>
+            <% end %>
+        </div>
+        <br><br>
         <button>
             <div class="buttontext">
                 <%= link_to "Back to User Mock Drafts", controller: 'mockdrafts' %>
             </div>
         </button>
-</div>
+    </div>
 </div>
 
