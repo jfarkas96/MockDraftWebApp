@@ -4,7 +4,7 @@ end
 
 
 When(/^I click on the "([^"]*)" link$/) do |page_name|
-    click_link page_name    
+    click_link page_name, match: :first  
 end
 
 Then(/^I should be on the "([^"]*)" page$/) do |page_name|
@@ -17,6 +17,10 @@ end
 
 Then(/^I should see the "([^"]*)" label$/) do |label_name|
     expect(page).to have_content(label_name)
+end
+
+Then(/^I should not see the "([^"]*)" label$/) do |label_name|
+    expect(page).to have_no_content(label_name)
 end
 
 Then(/^I should see the "([^"]*)" button$/) do |button_name|
