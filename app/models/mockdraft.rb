@@ -2,6 +2,7 @@ class Mockdraft < ApplicationRecord
     has_many :mock_draft_comments 
               
     validates :creator, presence: true, length: { minimum: 4 }
+    validates :creator, uniqueness: { scope: :creator, message: "Name has been taken" }
     validates :pick1, presence: true, length: { minimum: 1 }
     validates :pick2, presence: true, length: { minimum: 1 }
     validates :pick3, presence: true, length: { minimum: 1 }

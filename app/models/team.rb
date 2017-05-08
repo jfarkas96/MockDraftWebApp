@@ -1,6 +1,6 @@
 class Team < ApplicationRecord
     has_many :team_comments
-    validates :name, presence: true
+    validates :name, presence: true, uniqueness: { scope: :name, message: "has already been added" }
     validates :needs, presence: true
     validates :round1, presence: true
     validates :round2, presence: true

@@ -1,6 +1,6 @@
 class Player < ApplicationRecord
     has_many :player_comments
-    validates :name, presence: true
+    validates :name, presence: true, uniqueness: { scope: :name, message: "has already been added" }
     validates :college, presence: true
     validates :position, presence: true
     validates :grade, presence: true
