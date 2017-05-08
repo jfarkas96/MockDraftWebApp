@@ -15,17 +15,17 @@
         <%= form_for :mockdraft, url: mockdrafts_path do |f| %>
         <% if @mockdraft.errors.any? %>
             <div class="error">
-            <div id="error_explanation">
-            <h2>
-                <%= pluralize(@mockdraft.errors.count, "error") %> prohibited
-                this mock draft from being saved:
-            </h2>
-            <ul>
-                <% @mockdraft.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
-            </div>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@mockdraft.errors.count, "error") %> prohibited
+                        this mock draft from being saved:
+                    </h2>
+                    <ul>
+                        <% @mockdraft.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
             </div>
         <% end %>
         <p>
